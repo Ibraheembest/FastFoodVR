@@ -1,0 +1,20 @@
+using UnityEngine;
+
+public class KnobFlameToggle : MonoBehaviour
+{
+    public ParticleSystem flameParticle; // Reference to the flame particle system
+    private bool isFlameOn = false; // Track flame state
+
+    public void ToggleFlame()
+    {
+        if (flameParticle != null)
+        {
+            isFlameOn = !isFlameOn; // Toggle the flame state
+
+            if (isFlameOn)
+                flameParticle.Play(); // Turn on the flame
+            else
+                flameParticle.Stop(); // Turn off the flame
+        }
+    }
+}
